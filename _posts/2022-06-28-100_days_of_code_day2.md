@@ -82,7 +82,8 @@ people_as_int = int(people)
 
 bill_per_person = total_as_int * (tip_percentage_as_int / 100 + 1) / people_as_int
 
-rounded_bill_per_person = round(bill_per_person, 2)
+# rounded_bill_per_person = round(bill_per_person, 2)
+rounded_bill_per_person = "{:.2f}".format(bill_per_person)
 
 print(f"Each person should pay: ${rounded_bill_per_person}")
 ```
