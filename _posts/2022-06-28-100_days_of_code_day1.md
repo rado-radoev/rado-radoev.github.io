@@ -6,10 +6,9 @@ tags: [python,code,learning,100days]
 ---
 
 # 100 Days of Code
-
 ## Day 1
-[repl-day-1-2-exercise](https://replit.com/@rado-radoev/day-1-2-exercise#README.md)
-[coding-room] (https://app.codingrooms.com/management/assignments/364786/overview)
+
+#### Exercise 1 - Printing
 
 Solution:
 ```python
