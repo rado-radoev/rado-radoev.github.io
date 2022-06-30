@@ -60,3 +60,29 @@ months_left = (MAX_AGE - current_age_as_int) * MONTHS_IN_YEAR
 
 print(f"You have {days_left} days, {weeks_left} weeks, and {months_left} months left.")
 ```
+
+#### Exericese 5 - Tip calculator
+```python
+#If the bill was $150.00, split between 5 people, with 12% tip. 
+
+#Each person should pay (150.00 / 5) * 1.12 = 33.6
+#Format the result to 2 decimal places = 33.60
+
+#Tip: There are 2 ways to round a number. You might have to do some Googling to solve this.💪
+
+#Write your code below this line 👇
+print("Welcome to the tip calculator")
+total_bill = input("What was the total bill? ")
+tip_percentage = input("What percentage tip would you like to give? 10,12, or 15? ")
+people = input('How many people to split the bill? ')
+
+total_as_int = float(total_bill)
+tip_percentage_as_int = float(tip_percentage)
+people_as_int = int(people)
+
+bill_per_person = total_as_int * (tip_percentage_as_int / 100 + 1) / people_as_int
+
+rounded_bill_per_person = round(bill_per_person, 2)
+
+print(f"Each person should pay: ${rounded_bill_per_person}")
+```
