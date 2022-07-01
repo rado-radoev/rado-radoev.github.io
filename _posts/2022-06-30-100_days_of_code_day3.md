@@ -60,7 +60,7 @@ else:
 
 
 #### Exerice 3 - Leap year calculator
-(This is work in porgress -- check with 2016 and 2020)
+
 ```python
 # 🚨 Don't change the code below 👇
 year = int(input("Which year do you want to check? "))
@@ -70,16 +70,12 @@ year = int(input("Which year do you want to check? "))
 leap = False
 
 if year % 100 == 0:
-    print("Devisibel by 100")
     leap = False
-
-if year % 4 == 0 and year % 400 == 0:
-    print("Devisible by 4")
+elif year % 4 == 0: 
+    leap = True
+elif year % 400 == 0:
     leap = True
 
-if leap:
-    print("Leap year.")
-else:
-    print("Not leap year.")
 
+print("Leap year.") if leap else print("Not leap year.")
 ```
