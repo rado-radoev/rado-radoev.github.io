@@ -10,12 +10,15 @@ tags: [python,code,learning,100days]
 ## Day 3
 
 #### Exerice 1 - Odd or Even
+
 > modulus % 
 > 
 > even number % 2 = 0
 > 
 > odd number % 2 = 1
->
+
+<br />
+
 ```python
 # 🚨 Don't change the code below 👇
 number = int(input("Which number do you want to check? "))
@@ -36,6 +39,9 @@ else:
 > > elif condition:
 > 
 > else
+
+<br />
+
 ```python
 # 🚨 Don't change the code below 👇
 height = float(input("enter your height in m: "))
