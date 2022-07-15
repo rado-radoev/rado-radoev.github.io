@@ -1,67 +1,72 @@
-rock = '''
-    _______
----'   ____)
-      (_____)
-      (_____)
-      (____)
----.__(___)
-'''
-
-paper = '''
-    _______
----'   ____)____
-          ______)
-          _______)
-         _______)
----.__________)
-'''
-
-scissors = '''
-    _______
----'   ____)____
-          ______)
-       __________)
-      (____)
----.__(___)
-'''
-
+import string
 import random
+from turtle import update
+from xml.dom.minidom import Element
 
-user_input = input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n")
-rps_ascii = [rock, paper, scissors]
-rps = ["rock", "paper", "scissors"]
+alphabet = list(string.ascii_letters)
+digits = list(string.digits)
+symbols = list(string.punctuation)
 
-user_selected = int(user_input)
-user_choice= rps[user_selected]
+nr_letters = int(input("How many letters would you like in your password?\n"))
+nr_symbols = int(input("How many symbols would you like in your password?\n"))
+nr_numbers = int(input("How many numbers would you like in your password?\n"))
 
-computer_select = random.randint(0, len(rps) - 1)
-computer_choice = rps[computer_select]
+password_list = []
 
-game_over = 0
+for char in range(1, nr_letters + 1):
+  password_list.append(random.choice(alphabet))
 
-print(f"User chose: {rps[user_selected]} {rps_ascii[user_selected]}")
-print(f"Computer chose: {rps[computer_select]} {rps_ascii[computer_select]}")
+for char in range(1, nr_symbols + 1):
+  password_list.append(random.choice(symbols))
 
-if user_choice == computer_choice:
-  print("Tie")
-  game_over = 1
-else:
-  # Rock wins against scissors.
-  if game_over == 0 and (user_choice == "rock" and computer_choice != "paper"):
-    print("You win")
-    game_over = 1
+for char in range(1, nr_numbers + 1):
+  password_list.append(random.choice(digits))
 
-  # Scissors win against paper.
-  if game_over == 0 and(user_choice == "scissors" and computer_choice != "rock"):
-    print("You win")
-    game_over = 1
+# print(password_list)
+random.shuffle(password_list)
+# print(password_list)
 
+password = ""
+for char in password_list:
+  password += char
 
-  # Paper wins against rock.
-  if game_over == 0 and (user_choice == "paper" and computer_choice != "scissors"):
-    print("You win")
-    game_over = 1
+print(f"Your password is: {password}")
 
-if game_over == 0:
-  print("You lose")
+# === BUNCH A NONSESE BELOW ===
+# map = [alphabet, digits, symbols]
+
+# random_list = random.randint(0, len(map) - 1)
+# random_char = random.randint(0, len(map[random_list]) - 1 )
+# nr_letters = int(input("How many letters would you like in your password?\n"))
+# nr_symbols = int(input("How many symbols would you like in your password?\n"))
+# nr_numbers = int(input("How many numbers would you like in your password?\n"))
+
+# # print(map[random_list][random_char])
+# pw_letters = []
+# pw_digits = []
+# pw_symbols = []
+
+# for letter in range(1, nr_letters + 1):
+#   random_char = random.randint(0, len(alphabet) - 1 )
+#   pw_letters.append(alphabet[random_char])
+
+# for digit in range(1, nr_numbers + 1):
+#   random_char = random.randint(0, len(digits) - 1 )
+#   pw_digits.append(digits[random_char])
+
+# for symbol in range(1, nr_symbols + 1):
+#   random_char = random.randint(0, len(symbols) - 1 )
+#   pw_symbols.append(symbols[random_char])
+
+# ordered_pass = [pw_letters, pw_digits, pw_symbols]
+# flattened_pass = [element for sublist in ordered_pass for element in sublist]
+# print(''.join(flattened_pass))
+
+# unordered_pass = {''.join(flattened_pass)}
+# # unordered_pass.update(ordered_pass)
+# print(''.join(unordered_pass))
+# # for x in ordered_pass:
+# #   for y in x:
+# #     unordered_pass.update(y)
+
 
