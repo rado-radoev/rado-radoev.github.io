@@ -1,7 +1,5 @@
 import string
 import random
-from turtle import update
-from xml.dom.minidom import Element
 
 alphabet = list(string.ascii_letters)
 digits = list(string.digits)
